@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene fog="type: linear; color: #AAA">
+        <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" material="color: #a74ad9" geometry=""></a-box> -->
+
+        <a-entity camera look-controls position="0 0 0">
+          <a-entity cursor="fuse: true; fuseTimeout: 500"
+                    position="0 0 -1"
+                    geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                    material="color: black; shader: flat">
+          </a-entity>
+        </a-entity>
+        <!-- <a-gltf-model src="#cactus" scale="0.29 0.29 0.29" gltf-model="cactus.gltf" ></a-gltf-model> -->
+        
+        <a-assets>
+          <a-asset-item id="cactus" src="cactus2.gltf"></a-asset-item>
+        </a-assets>
+
+        
+      
+        <!-- Using the asset management system. -->
+        <a-gltf-model cursor-listener src="#cactus" rotation="0 -58.197042124823106 0" position="-1.3 0 -3.5" scale="0.29 0.29 0.29"></a-gltf-model>
+
+
+        <a-box position="1 8 -10" rotation="0 45 0" color="#4CC3D9" material="color: #a74ad9" geometry="" animation__test="property: position; to: 1 8 -10; dur: 2000; easing: linear; loop: true"></a-box>
+
+      
+
+      <a-sphere cursor-listener position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      
+      <a-sphere cursor-listener position="1.72168 3.04449 -6.43" radius="1.25" color="#EF2D5E" material="color: #2eefaf" geometry=""></a-sphere>
+      
+      <a-cylinder cursor-listener position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
+      <a-box position="-1 1.6 -5" animation="property: position; to: 1 8 -10; dur: 2000; easing: linear; loop: true" color="tomato"></a-box>
+      
+      <!-- <a-cylinder position="1 1.77 -2.42" radius="3.5" height="1.5" color="#FFC65D" event-set__enter="_event: mouseenter; _target: #cylinderText; visible: true" event-set__leave="_event: mouseleave; _target: #cylinderText; visible: false" material="color: #5cff6f" geometry="" scale="0.07 0.2 0.49">
+        <a-text id="cylinderText" value="This is a cylinder" align="center" color="#FFF" visible="false" position="0 -0.55 0.55" geometry="primitive: plane; width: 1.75" material="color: #333" text=""></a-text>
+      </a-cylinder> -->
+      
+      <a-gltf-model src="assets/skyscraper1.gltf" scale="0.19 0.19 0.19" position="1.27 0.43 -1.36" rotation="0 144.7 0"></a-gltf-model>
+      <a-gltf-model src="capi.gltf" scale="0.19 0.19 0.19" position="0.76599 1.69264 -2.7842" rotation="0 -4 0"></a-gltf-model>></a-gltf-model>
+
+
+    </a-scene>
+
+    <script>
+      AFRAME.registerComponent('cursor-listener', {
+  init: function () {
+    var lastIndex = -1;
+    var COLORS = ['red', 'green', 'blue'];
+    this.el.addEventListener('click', function (evt) {
+      lastIndex = (lastIndex + 1) % COLORS.length;
+      this.setAttribute('material', 'color', COLORS[lastIndex]);
+      console.log('I was clicked at: ', evt.detail.intersection.point);
+
+    // if(this.x == "-1.1140840335951583") {
+    if(this.getAttribute("src") == "#cactus") {
+      //alert("hello")
+      window.location.href = "./demo1-1.html"
+
+    }
+
+    });
+  }
+});
+    </script>
+    
+  </body>
+</html>

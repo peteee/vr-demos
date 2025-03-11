@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene fog="type: linear; color: #CCC">
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" ></a-box>
+      
+      <!-- <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere> -->
+      <a-sphere position="2.63815 1.25 -5" radius="1.25" color="#EF2D5E" material="color: #13373a"></a-sphere>
+      <a-cylinder animation__test="property: position; to: 8 10 -5;  dur: 2000; easing: linear; loop: true" position="-2.02027 2.16596 -3" radius="0.5" height="1.5" color="#FFC65D" material="" geometry="primitive: ring"></a-cylinder>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-box position="-1 1.6 -5" animation="property: position; to: 1 8 -10; dur: 2000; easing: linear; loop: true" color="tomato"></a-box>
+      <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+        <a-sphere position="5 0 0" color="mediumseagreen"></a-sphere>
+      </a-entity>
+
+
+      <!-- <a-assets>
+        <a-asset-item id="tower" src="tower-2.gltf"></a-asset-item>
+      </a-assets> -->
+    
+      <!-- Using the asset management system. -->
+      <!-- <a-gltf-model src="#tower" scale="0.27 0.27 0.27"></a-gltf-model> -->
+    
+      <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
+      <!-- <a-gltf-model src="tower-2.gltf"></a-gltf-model> -->
+
+
+      <!-- <a-gltf-model src="assets/cactus2.gltf"></a-gltf-model> -->
+
+      <a-gltf-model src="assets/cactus2.gltf" scale="0.1 0.1 0.1" position="-0.55 1.32 -1.01" ></a-gltf-model>
+
+      <a-gltf-model src="assets/stove.gltf" scale="0.29 0.29 0.29" position="0.42229 0.66038 -1.61" gltf-model="assets/stove.gltf" rotation="0.5001921551492087 -121.24646381660916 -0.38"></a-gltf-model>      
+      <!-- <a-assets>
+        <a-asset-item id="cactus" src="cactus2.gltf"></a-asset-item>
+      </a-assets> -->
+    
+      <!-- Using the asset management system. -->
+      <!-- <a-gltf-model src="#cactus" scale="0.1 0.1 0.1" position="0 1.44 0"></a-gltf-model> -->
+
+      <!-- Red directional light shining from the top left. -->
+      <a-light color="white" position="-1 1 0"></a-light>
+
+      <!-- Blue point light, 5 meters in the air. -->
+      <a-light type="point" color="beige" position="0 5 0"></a-light>
+
+      <!-- Dim ambient lighting. -->
+      <a-light type="ambient" color="#222"></a-light>
+
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+    <script>
+      // window.addEventListener("DOMContentLoaded", function() {
+        // setTimeout(() => {
+        //   document.querySelector("a-scene").enterVR();
+        // }, 1900);
+      //})
+    </script>
+  </body>
+</html>
